@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contatos</title>
+
+    <script>
+    
+    let contatos = [{
+        Nome:"João",Email:"joão@gmail.com",
+        
+        Telefone:"11998774533",
+      },
+      
+      {
+       
+        Nome: "Maria", Email: "maria@gmail.com",
+      
+        Telefone: "11933227566"
+      
+      },
+      
+        {
+      
+        Nome: "Pedro", Email: "pedro@hotmail.com",
+      
+        Telefone: "11987654567"
+      
+      },
+      
+      
+      ]
+      
+      let menu = "OPÇÕES DO MENU\n1 - Exibir todos os contatos\n2 - Cadastrar um novo contato\n3 - Remover contato pelo nome\n4 - Buscar contato pelo nome";
+      
+      let opção = prompt(menu);
+      
+      switch(opção){
+          case'1':{
+          //Listar todos os contatos
+         alert(JSON.stringify(contatos))
+          break;
+      }case '2':{
+        //Cadastrar um novo contato, informando corretamente o nome, email e número de telefone
+        nome = prompt("Qual o nome do novo contato?");
+        email = prompt ("Qual o email do novo contato?");
+        telefone = prompt("Qual o numero de telefone do novo contato?");
+        
+        let emailRegex = /a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`
+        let foneRegex = /\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm
+        
+        if(emailRegex.test(email) && foneRegex.test(telefone){
+        
+        contato.push[{Nome:nome,Email:email,Telefone:telefone,}];
+        alert(contatos);
+        }else{
+          alert("O email ou o telefone de ${nome} não são validos");
+        }
+        break;
+        
+      }case '3':{
+        //Remover contato pelo nome
+        let remover = prompt("Qual o nome do contato que você deseja remover");
+        let contatoRemovido =[];
+        contatoRemovido = contatos.filter(chavesNome => !remover.includes(chavesNome.Nome));
+        
+        alert(remover+" foi removido da sua lista de contatos")
+        alert("Sua nova lista de contatos " +JSON.stringify(contatoRemovido));
+        break;
+         }case '4':{
+        //Buascar contato pelo nome
+        if(opção =='4'){
+          let buscar = prompt("Qual o nome do contato que voçê esta procurando?");
+          
+          let contatoSelecionado = [];
+          contatoSelecionado = contatos.filter(chavesNome=> buscar.includes(chavesNome.Nome));
+          
+          alert(JSON.stringify(contatoSelecionado));
+          
+        }else{
+          alert("Contato não encontrado em sua lista de contatos");
+          
+        }
+         break;
+         }}</script>
+</head>
+<body>
+    
+</body>
+</html>
